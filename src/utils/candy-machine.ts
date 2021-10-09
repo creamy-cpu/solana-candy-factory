@@ -176,7 +176,7 @@ export const getCandyMachineState = async (
     program,
   }
   const state: any = await program.account.candyMachine.fetch(candyMachineId);
-  console.log("candyMachine state:", state)
+  console.log("candyMachine state:", state, JSON.stringify(state), program.account.candyMachine);
   const itemsAvailable = state.data.itemsAvailable.toNumber();
   const itemsRedeemed = state.itemsRedeemed.toNumber();
   const itemsRemaining = itemsAvailable - itemsRedeemed;
