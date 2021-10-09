@@ -402,6 +402,7 @@ export const mintMultipleToken = async (
       }),
     );
     console.log("instructions for mint:", instructions);
+    console.log("possible programIDs:", TOKEN_METADATA_PROGRAM_ID, TOKEN_PROGRAM_ID, anchor.web3.SystemProgram.programId, anchor.web3.SYSVAR_RENT_PUBKEY, anchor.web3.SYSVAR_CLOCK_PUBKEY);
     const signers: anchor.web3.Keypair[] = [mint];
 
     signersMatrix.push(signers)
