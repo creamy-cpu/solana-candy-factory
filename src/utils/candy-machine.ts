@@ -402,7 +402,9 @@ export const mintMultipleToken = async (
       }),
     );
     console.log("instructions for mint:", instructions);
-    console.log("possible programIDs:", TOKEN_METADATA_PROGRAM_ID, TOKEN_PROGRAM_ID, anchor.web3.SystemProgram.programId, anchor.web3.SYSVAR_RENT_PUBKEY, anchor.web3.SYSVAR_CLOCK_PUBKEY);
+    console.log("programID for instruction mintNft:", instructions[4].programId.toBase58());
+    console.log("function for instruction mintNft1:", candyMachine.program.instruction);
+    console.log("function for instruction mintNft1:", candyMachine.program.instruction.mintNft);
     const signers: anchor.web3.Keypair[] = [mint];
 
     signersMatrix.push(signers)
