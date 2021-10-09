@@ -176,6 +176,7 @@ export const getCandyMachineState = async (
     program,
   }
   const state: any = await program.account.candyMachine.fetch(candyMachineId);
+  console.log("candyMachine state:", state)
   const itemsAvailable = state.data.itemsAvailable.toNumber();
   const itemsRedeemed = state.itemsRedeemed.toNumber();
   const itemsRemaining = itemsAvailable - itemsRedeemed;
@@ -379,7 +380,7 @@ export const mintMultipleToken = async (
     ];
     const masterEdition = await getMasterEdition(mint.publicKey);
     const metadata = await getMetadata(mint.publicKey);
-  
+
     instructions.push(
       await candyMachine.program.instruction.mintNft({
         accounts: {
