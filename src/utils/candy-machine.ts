@@ -401,6 +401,7 @@ export const mintMultipleToken = async (
         }
       }),
     );
+    console.log("instructions for mint:", instructions);
     const signers: anchor.web3.Keypair[] = [mint];
 
     signersMatrix.push(signers)
